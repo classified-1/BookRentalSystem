@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html  >
 <head>
-  <!-- Site made with Mobirise Website Builder v5.3.5, https://mobirise.com -->
+  
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="generator" content="Mobirise v5.3.5, mobirise.com">
@@ -29,7 +29,9 @@
   
 </head>
 <body>
-  
+   
+
+
   <section class="menu menu3 cid-sxu7YDeVMZ" once="menu" id="menu3-1">
     
     <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
@@ -52,15 +54,16 @@
                     <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="page1.html">Contacts</a>
                     </li></ul>
                 <div class="icons-menu">
-                    <a class="iconfont-wrapper" href="https://mobiri.se" target="_blank">
+                    <a class="iconfont-wrapper" href="#" target="_blank">
                         <span class="p-2 mbr-iconfont socicon-facebook socicon"></span>
                     </a>
-                    <a class="iconfont-wrapper" href="https://mobiri.se" target="_blank">
+                    <a class="iconfont-wrapper" href="#" target="_blank">
                         <span class="p-2 mbr-iconfont socicon-twitter socicon"></span>
                     </a>
-                    <a class="iconfont-wrapper" href="https://mobiri.se" target="_blank">
+                    <a class="iconfont-wrapper" href="#" target="_blank">
                         <span class="p-2 mbr-iconfont socicon-linkedin socicon" style="color: rgb(35, 35, 35); fill: rgb(35, 35, 35);"></span>
                     </a>
+           
                     
                 </div>
                 
@@ -442,6 +445,8 @@
         </div>
     </div>
 </section><a href="https://mobirise.site/o" style="flex: 1 1; height: 3rem; padding-left: 1rem; display:none"></a>
+
+ 
   
   <script src="{{ asset('assets/web/assets/jquery/jquery.min.js')}}"></script> 
    <script src="{{ asset('assets/popper/popper.min.js')}}"></script>
