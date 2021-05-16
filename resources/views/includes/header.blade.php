@@ -15,18 +15,55 @@
               </div>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black display-4" href="{{url('#books')}}">Books</a></li>
+              <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true">
+                  @if (Request::is('login'))
+                <li class="nav-item"><a class="nav-link link text-black display-4" href="{{url('#books')}}">Books</a></li>
+                @else
+                <li class="nav-item"><a class="nav-link link text-black display-4" href="{{url('/#books')}}">Books</a></li>
+                @endif
+
                   <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="{{url('/about')}}">About</a></li>
                   <li class="nav-item">
                       <a class="nav-link link text-black text-primary display-4" href="{{url('/contact')}}">Contacts</a>
                   </li>
-                  <li class="nav-item dropdown">
+                  {{-- <li class="nav-item dropdown">
                     <a class="nav-link link text-black dropdown-toggle display-4" data-toggle="dropdown-submenu" aria-expanded="false">Account</a>
                     <div class="dropdown-menu">
                         <a class="text-black dropdown-item display-4" href="">Login</a>
                         <a class="text-black dropdown-item display-4" href="">Logout</a>
                     </div>
-                </li>
+                </li> --}}
+                <li class="nav-item dropdown">
+                    <a class="nav-link link text-black dropdown-toggle display-4" data-toggle="dropdown-submenu" aria-expanded="false">Account</a>
+                  
+                  @if (Route::has('login'))
+             
+                      @auth
+                      <div class="dropdown-menu">
+                        <a class="text-black dropdown-item display-4" href="{{ url('/dashboard') }}">Dashboard</a>
+
+                        <form method="POST" action="{{ route('logout') }}">
+                            @csrf
+
+                            {{-- <x-dropdown-link :href="route('logout')"
+                                    onclick="event.preventDefault();
+                                                this.closest('form').submit();">
+                                {{ __('Log out') }} --}}
+                        <a class="text-black dropdown-item display-4" onclick="event.preventDefault();
+                        this.closest('form').submit();">Logout</a>
+                    </div>                                    
+                        @else
+           
+                        <div class="dropdown-menu">
+                            <a class="text-black dropdown-item display-4" href="{{ route('login') }}">Login</a>
+                            <a class="text-black dropdown-item display-4" href="{{ route('register') }}">Register</a>
+                        </div>
+                       
+                    @endauth
+                      
+                 
+                  @endif
+                  </li>
                 
                 </ul>
                   

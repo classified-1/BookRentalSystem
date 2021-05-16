@@ -91,7 +91,7 @@
                     <x-responsive-nav-link :href="route('logout')"
                             onclick="event.preventDefault();
                                         this.closest('form').submit();">
-                        {{ __('Logout') }}
+                        {{ __('Log out') }}
                     </x-responsive-nav-link>
                 </form>
             </div>

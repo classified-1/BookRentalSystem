@@ -5,7 +5,6 @@
  
   
   <title>About Us</title>
-   
   @include('/includes/links')
   
 </head>
