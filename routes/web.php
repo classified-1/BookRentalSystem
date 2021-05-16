@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/', 'App\Http\Controllers\DashboardController@index')
-        ->name('dashboard');
+        ->name('/');
 });
 Route::get('/about', function () {
     return view('about');

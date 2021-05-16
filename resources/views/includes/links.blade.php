@@ -1,3 +1,10 @@
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Mobirise v5.3.5, mobirise.com">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
+<link rel="shortcut icon" href="{{asset('images/logo.png')}}" type="image/x-icon">
+<meta name="description" content="">
+
 <link rel="stylesheet" href="{{ asset('assets/web/assets/mobirise-icons2/mobirise2.css')}}">
   <link rel="stylesheet" href="{{ asset('assets/tether/tether.min.css')}}">
   <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css')}}">

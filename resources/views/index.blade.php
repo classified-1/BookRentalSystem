@@ -2,14 +2,7 @@
 <html  >
 <head>
   
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="generator" content="Mobirise v5.3.5, mobirise.com">
-  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1">
-  <link rel="shortcut icon" href="{{ asset('assets/images/logo.png')}}" type="image/x-icon">
-  <meta name="description" content="">
-  
-  
+ 
   <title>Home</title>
   @include('/includes/links')
    
@@ -17,7 +10,6 @@
 </head>
 <body>
    
-
 
     <div>
         @include('/includes/header')
@@ -80,9 +72,12 @@
     </div>
 </section>
 
-<section class="team1 cid-sxu8IrAIs4" id="team1-3">
-    
 
+        {{-- ///////////Books/////// --}}
+        <h2 class="text-danger text-center mt-5" id="books">Hello Books</h2>
+
+        {{-- /////Team//////// --}}
+<section class="team1 cid-sxu8IrAIs4" id="team1-3">
     
     <div class="container">
         <div class="row justify-content-center">
@@ -95,7 +90,7 @@
             <div class="col-sm-6 col-lg-3">
                 <div class="card-wrap">
                     <div class="image-wrap">
-                        <a href="mailto:hassan4444khan@gmail.com"><img src="assets/images/gravatar-1.png" alt="hassan"></a>
+                        <a href="mailto:hassan4444khan@gmail.com"><img src="assets/images/hassan.png" alt="hassan"></a>
                     </div>
                     <div class="content-wrap">
                         <h5 class="mbr-section-title card-title mbr-fonts-style align-center m-0 display-5">
@@ -108,17 +103,17 @@
                         </p>
                         <div class="social-row display-7">
                             <div class="soc-item">
-                                <a href="https://www.facebook.com/Mobirise/" target="_blank">
+                                <a href="" target="_blank">
                                     <span class="mbr-iconfont socicon socicon-facebook"></span>
                                 </a>
                             </div>
                             <div class="soc-item">
-                                <a href="https://twitter.com/mobirise" target="_blank">
+                                <a href="" target="_blank">
                                     <span class="mbr-iconfont socicon socicon-twitter"></span>
                                 </a>
                             </div>
                             <div class="soc-item">
-                                <a href="https://instagram.com/mobirise" target="_blank">
+                                <a href="" target="_blank">
                                     <span class="mbr-iconfont socicon socicon-instagram"></span>
                                 </a>
                             </div>
@@ -133,7 +128,7 @@
             <div class="col-sm-6 col-lg-3">
                 <div class="card-wrap">
                     <div class="image-wrap">
-                        <img src="assets/images/100088861-1587172148096599-4711338798816952320-n.jpeg" alt="">
+                        <img src="assets/images/mohsin.jpeg" alt="">
                     </div>
                     <div class="content-wrap">
                         <h5 class="mbr-section-title card-title mbr-fonts-style align-center m-0 display-5">
@@ -145,17 +140,17 @@
                         </p>
                         <div class="social-row display-7">
                             <div class="soc-item">
-                                <a href="https://www.facebook.com/Mobirise/" target="_blank">
+                                <a href="" target="_blank">
                                     <span class="mbr-iconfont socicon socicon-facebook"></span>
                                 </a>
                             </div>
                             <div class="soc-item">
-                                <a href="https://twitter.com/mobirise" target="_blank">
+                                <a href="" target="_blank">
                                     <span class="mbr-iconfont socicon socicon-twitter"></span>
                                 </a>
                             </div>
                             <div class="soc-item">
-                                <a href="https://instagram.com/mobirise" target="_blank">
+                                <a href="" target="_blank">
                                     <span class="mbr-iconfont socicon socicon-instagram"></span>
                                 </a>
                             </div>
@@ -170,7 +165,7 @@
             <div class="col-sm-6 col-lg-3">
                 <div class="card-wrap">
                     <div class="image-wrap">
-                        <img src="assets/images/team3.jpeg" alt="">
+                        <img src="assets/images/samad.jpeg" alt="">
                     </div>
                     <div class="content-wrap">
                         <h5 class="mbr-section-title card-title mbr-fonts-style align-center m-0 display-5">
@@ -182,17 +177,17 @@
                         </p>
                         <div class="social-row display-7">
                             <div class="soc-item">
-                                <a href="https://www.facebook.com/Mobirise/" target="_blank">
+                                <a href="" target="_blank">
                                     <span class="mbr-iconfont socicon socicon-facebook"></span>
                                 </a>
                             </div>
                             <div class="soc-item">
-                                <a href="https://twitter.com/mobirise" target="_blank">
+                                <a href="" target="_blank">
                                     <span class="mbr-iconfont socicon socicon-twitter"></span>
                                 </a>
                             </div>
                             <div class="soc-item">
-                                <a href="https://instagram.com/mobirise" target="_blank">
+                                <a href="" target="_blank">
                                     <span class="mbr-iconfont socicon socicon-instagram"></span>
                                 </a>
                             </div>
@@ -206,11 +201,11 @@
 
             <div class="col-sm-6 col-lg-3">
                 <div class="card-wrap">
-                    <div class="image-wrap">
-                        <img src="assets/images/mbr.jpeg" alt="">
+                    <div class="image-wrap ">
+                        <img src="assets/images/ali.jpeg" alt="">
                     </div>
-                    <div class="content-wrap">
-                        <h5 class="mbr-section-title card-title mbr-fonts-style align-center m-0 display-5">
+                    <div class="content-wrap mt-4">
+                        <h5 class="mbr-section-title card-title mbr-fonts-style mt-5 align-center m-0 display-5">
                             M Ali</h5>
                         <h6 class="mbr-role mbr-fonts-style align-center mb-3 display-4">
                             <strong>Programmer</strong>
@@ -220,17 +215,17 @@
                         </p>
                         <div class="social-row display-7">
                             <div class="soc-item">
-                                <a href="https://www.facebook.com/Mobirise/" target="_blank">
+                                <a href="" target="_blank">
                                     <span class="mbr-iconfont socicon socicon-facebook"></span>
                                 </a>
                             </div>
                             <div class="soc-item">
-                                <a href="https://twitter.com/mobirise" target="_blank">
+                                <a href="" target="_blank">
                                     <span class="mbr-iconfont socicon socicon-twitter"></span>
                                 </a>
                             </div>
                             <div class="soc-item">
-                                <a href="https://instagram.com/mobirise" target="_blank">
+                                <a href="" target="_blank">
                                     <span class="mbr-iconfont socicon socicon-instagram"></span>
                                 </a>
                             </div>
@@ -245,9 +240,10 @@
     </div>
 </section>
 
-<section class="content3 cid-sxueRpscdj" id="content3-5">
-    
-    
+
+{{-- /////////////////Latest News///////////// --}}
+
+<section class="content3 cid-sxueRpscdj" id="content3-5">  
     <div class="container">
         <div class="mbr-section-head">
             <h4 class="mbr-section-title mbr-fonts-style align-center mb-0 display-2"><strong>Latest News</strong></h4>
@@ -303,9 +299,7 @@
     </div>
 </section>
 @include('/includes/footer')
-
- 
-  @include('/includes/scripts')
+@include('/includes/scripts')
   
 </body>
 </html>

@@ -15,12 +15,24 @@
               </div>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black display-4" href="{{url('/')}}">Books</a></li>
+              <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black display-4" href="{{url('#books')}}">Books</a></li>
                   <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="{{url('/about')}}">About</a></li>
                   <li class="nav-item">
                       <a class="nav-link link text-black text-primary display-4" href="{{url('/contact')}}">Contacts</a>
-                  </li></ul>
-              <div class="icons-menu">
+                  </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link link text-black dropdown-toggle display-4" data-toggle="dropdown-submenu" aria-expanded="false">Account</a>
+                    <div class="dropdown-menu">
+                        <a class="text-black dropdown-item display-4" href="">Login</a>
+                        <a class="text-black dropdown-item display-4" href="">Logout</a>
+                    </div>
+                </li>
+                
+                </ul>
+                  
+
+                  {{-- //////Social Icons in Header --}}
+              {{-- <div class="icons-menu">
                   <a class="iconfont-wrapper" href="#" target="_blank">
                       <span class="p-2 mbr-iconfont socicon-facebook socicon"></span>
                   </a>
@@ -29,10 +41,8 @@
                   </a>
                   <a class="iconfont-wrapper" href="#" target="_blank">
                       <span class="p-2 mbr-iconfont socicon-linkedin socicon" style="color: rgb(35, 35, 35); fill: rgb(35, 35, 35);"></span>
-                  </a>
-         
-                  
-              </div>
+                  </a>  
+              </div> --}}
               
           </div>
       </div>
