@@ -11,66 +11,17 @@
   
   
   <title>Home</title>
-  <link rel="stylesheet" href="{{ asset('assets/web/assets/mobirise-icons2/mobirise2.css')}}">
-  <link rel="stylesheet" href="{{ asset('assets/tether/tether.min.css')}}">
-  <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap.min.css')}}">
-  <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-grid.min.css')}}">
-  <link rel="stylesheet" href="{{ asset('assets/bootstrap/css/bootstrap-reboot.min.css')}}">
-  <link rel="stylesheet" href="{{ asset('assets/dropdown/css/style.css')}}">
-  <link rel="stylesheet" href="{{ asset('assets/socicon/css/styles.css')}}">
-  <link rel="stylesheet" href="{{ asset('assets/theme/css/style.css')}}">
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;1,400;1,700&display=swap&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,400;0,700;1,400;1,700&display=swap&display=swap"></noscript>
-  <link rel="preload" as="style" href="{{ asset('assets/mobirise/css/mbr-additional.css')}}">
-  <link rel="stylesheet" href="{{ asset('assets/mobirise/css/mbr-additional.css')}}" type="text/css">
-  
-  
-  
+  @include('/includes/links')
+   
   
 </head>
 <body>
    
 
 
-  <section class="menu menu3 cid-sxu7YDeVMZ" once="menu" id="menu3-1">
-    
-    <nav class="navbar navbar-dropdown navbar-fixed-top navbar-expand-lg">
-        <div class="container">
-            <div class="navbar-brand">
-                
-                <span class="navbar-caption-wrap"><a class="navbar-caption text-black display-7" href="/">EBOOK</a></span>
-            </div>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <div class="hamburger">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav nav-dropdown nav-right" data-app-modern-menu="true"><li class="nav-item"><a class="nav-link link text-black display-4" href="https://mobiri.se">Books</a></li>
-                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="page2.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link link text-black text-primary display-4" href="page1.html">Contacts</a>
-                    </li></ul>
-                <div class="icons-menu">
-                    <a class="iconfont-wrapper" href="#" target="_blank">
-                        <span class="p-2 mbr-iconfont socicon-facebook socicon"></span>
-                    </a>
-                    <a class="iconfont-wrapper" href="#" target="_blank">
-                        <span class="p-2 mbr-iconfont socicon-twitter socicon"></span>
-                    </a>
-                    <a class="iconfont-wrapper" href="#" target="_blank">
-                        <span class="p-2 mbr-iconfont socicon-linkedin socicon" style="color: rgb(35, 35, 35); fill: rgb(35, 35, 35);"></span>
-                    </a>
-           
-                    
-                </div>
-                
-            </div>
-        </div>
-    </nav>
-</section>
+    <div>
+        @include('/includes/header')
+    </div>
 
 <section class="slider1 cid-sxu8162i6V" id="slider1-2">
     
@@ -351,113 +302,10 @@
         </div>
     </div>
 </section>
-
-<section class="footer6 cid-sxufqasFXX" once="footers" id="footer6-7">
-
-    
-
-    
-
-    <div class="container">
-        <div class="row content mbr-white">
-            <div class="col-12 col-md-3 mbr-fonts-style display-7">
-                <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7">
-                    <strong>Address</strong>
-                </h5>
-                <p class="mbr-text mbr-fonts-style display-7">
-                    Mall of Lahore Tufail Road<br>
-                    Lahore, Punjab 54810</p> <br>
-                <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 mt-4 display-7">
-                    <strong>Contacts</strong>
-                </h5>
-                <p class="mbr-text mbr-fonts-style mb-4 display-7">
-                    Email: support@ebook.com <br>
-                    Phone: +92 345 6578910<br>
-                    Fax: ++92 345 6578910</p>
-            </div>
-            <div class="col-12 col-md-3 mbr-fonts-style display-7">
-                <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 display-7">
-                    <strong>Links</strong>
-                </h5>
-                <ul class="list mbr-fonts-style mb-4 display-4">
-                    <li class="mbr-text item-wrap">
-                        <a class="text-primary" href="https://mobirise.co/">Website builder</a>
-                    </li>
-                    <li class="mbr-text item-wrap">
-                        <a class="text-primary" href="https://mobirise.co/">Download for Windows</a>
-                    </li>
-                    <li class="mbr-text item-wrap">
-                        <a class="text-primary" href="https://mobirise.co/">Download for Mac</a>
-                    </li>
-                </ul>
-                <h5 class="mbr-section-subtitle mbr-fonts-style mb-2 mt-5 display-7">
-                    <strong>Feedback</strong>
-                </h5>
-                <p class="mbr-text mbr-fonts-style mb-4 display-7">
-                    Please send us your ideas, bug reports, suggestions! Any feedback would be appreciated.
-                </p>
-            </div>
-            <div class="col-12 col-md-6">
-                <div class="google-map"><iframe frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDk89J4FSunMF33ruMVWJaJht_Ro0kvoXs&amp;q=Mall of Lahore, Rahat Bakery, Tufail Road, near Cantt, Cantt, Lahore" allowfullscreen=""></iframe></div>
-            </div>
-            <div class="col-md-6">
-                <div class="social-list align-left">
-                    <div class="soc-item">
-                        
-                            <span class="mbr-iconfont mbr-iconfont-social socicon-twitter socicon"></span>
-                        
-                    </div>
-                    <div class="soc-item">
-                        
-                            <span class="mbr-iconfont mbr-iconfont-social socicon-facebook socicon"></span>
-                        
-                    </div>
-                    <div class="soc-item">
-                        
-                            <span class="mbr-iconfont mbr-iconfont-social socicon-youtube socicon"></span>
-                        
-                    </div>
-                    <div class="soc-item">
-                        
-                            <span class="mbr-iconfont mbr-iconfont-social socicon-instagram socicon" style=""></span>
-                        
-                    </div>
-                    <div class="soc-item">
-                        
-                            <span class="mbr-iconfont mbr-iconfont-social socicon-googleplus socicon"></span>
-                        
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        <div class="footer-lower">
-            <div class="media-container-row">
-                <div class="col-sm-12">
-                    <hr>
-                </div>
-            </div>
-            <div class="col-sm-12 copyright pl-0">
-                <p class="mbr-text mbr-fonts-style mbr-white display-7">
-                    © Copyright 2021 EBOOK- All Rights Reserved
-                </p>
-            </div>
-        </div>
-    </div>
-</section><a href="https://mobirise.site/o" style="flex: 1 1; height: 3rem; padding-left: 1rem; display:none"></a>
+@include('/includes/footer')
 
  
-  
-  <script src="{{ asset('assets/web/assets/jquery/jquery.min.js')}}"></script> 
-   <script src="{{ asset('assets/popper/popper.min.js')}}"></script>
-  <script src="{{ asset('assets/tether/tether.min.js')}}"></script>
-  <script src="{{ asset('assets/bootstrap/js/bootstrap.min.js')}}"></script>
-  <script src="{{ asset('assets/smoothscroll/smooth-scroll.js')}}"></script> 
-  <script src="{{ asset('assets/dropdown/js/nav-dropdown.js')}}"></script>  <script src="{{ asset('assets/dropdown/js/navbar-dropdown.js')}}">
-  </script>
-  <script src="{{ asset('assets/touchswipe/jquery.touch-swipe.min.js')}}"></script> 
-  <script src="{{ asset('assets/theme/js/script.js')}}"></script>  
-  
+  @include('/includes/scripts')
   
 </body>
 </html>

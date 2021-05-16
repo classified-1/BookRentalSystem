@@ -28,7 +28,7 @@
                         <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
                        <br>
                        <br>
-                       <h2 class="text-light">Hassan</h2>
+                       
                         
                     @else
                         <a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a>
