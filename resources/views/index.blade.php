@@ -4,6 +4,7 @@
   
  
   <title>Home</title>
+  
   @include('/includes/links')
    
   
@@ -74,7 +75,9 @@
 
 
         {{-- ///////////Books/////// --}}
-        <h2 class="text-danger text-center mt-5" id="books">Hello Books</h2>
+        <h2 class="text-danger text-center mt-5" id="books">ALL Books</h2>
+        @include('books')
+
 
         {{-- /////Team//////// --}}
 <section class="team1 cid-sxu8IrAIs4" id="team1-3">
@@ -202,7 +205,7 @@
             <div class="col-sm-6 col-lg-3">
                 <div class="card-wrap">
                     <div class="image-wrap ">
-                        <img src="assets/images/ali.jpeg" alt="">
+                        <img src="assets/images/samad.jpeg" alt="">
                     </div>
                     <div class="content-wrap mt-4">
                         <h5 class="mbr-section-title card-title mbr-fonts-style mt-5 align-center m-0 display-5">

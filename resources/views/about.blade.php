@@ -93,7 +93,7 @@
                 <div class="carousel-item">
                     <div class="user col-md-8">
                         <div class="user_image">
-                            <img src="assets/images/ali.jpeg">
+                            <img src="assets/images/samad.jpeg">
                         </div>
                         <div class="user_text mb-4">
                             <p class="mbr-fonts-style display-7">
