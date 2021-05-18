@@ -20,3 +20,5 @@ menuIconEl.on('click', function() {
 sidenavCloseEl.on('click', function() {
   toggleClassName(sidenavEl, 'active');
 });
+
+

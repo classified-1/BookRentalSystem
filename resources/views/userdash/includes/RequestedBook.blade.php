@@ -11,17 +11,12 @@
          <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
         <div class="card-img-overlay d-flex flex-column">
          <div class="card-body">
-            <small class="card-meta mb-2">Thought Leadership</small>
-            <h4 class="card-title mt-0 "><a class="text-white" herf="#">Goverment Lorem Ipsum Sit Amet Consectetur dipisi?</a></h4>
-           <small><i class="far fa-clock"></i> October 15, 2020</small>
+        
+            <h4 class="text-danger mb-2 animate-flicker p-2" style="background-color: #1414148e">Pending Approval</h4>
+
+           
           </div>
-          <div class="card-footer">
-           <div class="media">
-  <div class="media-body bg-danger pl-4 pt-2 pb-2">
-    <h3 class="my-0 text-white d-block text-light"><strong>Fine: </strong>100Rs</h3>
-    
-  </div>
-</div>
+        
           </div>
         </div>
       </div></div>
