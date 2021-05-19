@@ -28,7 +28,7 @@
  <div class="sidenav__close-icon">
    <i class="fas fa-times sidenav__brand-close"></i>
  </div>
- <div style="background-color: rgb(36, 42, 66);padding:20px;">
+ <div style="background-color: rgb(23,162,184);padding:20px;">
   <h6 class=" text-light">Welcome {{ Auth::user()->name }}</h6>
 </div>
  <ul class="sidenav__list">

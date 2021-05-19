@@ -6,7 +6,7 @@
   <title>Home</title>
   
   @include('/includes/links')
-   
+  <link rel="stylesheet" href="{{ asset('assets/indexpage/index.css')}}"> 
   
 </head>
 <body>
@@ -16,7 +16,7 @@
         @include('/includes/header')
     </div>
 
-<section class="slider1 cid-sxu8162i6V" id="slider1-2">
+{{-- <section class="slider1 cid-sxu8162i6V" id="slider1-2">
     
     <div class="carousel slide" id="sxumXjt6Vj" data-interval="5000">
         <ol class="carousel-indicators">
@@ -71,8 +71,23 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-</section>
+</section> --}}
+<div style="max-height: 100vh; background-image:url('https://images.unsplash.com/photo-1437419764061-2473afe69fc2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=890&q=80');background-repeat:no-repeat;background-size: cover;" class="text-center  pl-5">
+    
+<div class="book mt-3" style="margin-left:10em; ">
+    <div id="pages" class="pages">
+      <div class="page"><p class="text-info">Welcome To <br><br>EBOOK!   </p> <p><small style="font-size: 20px">Click here for updates</small></p></div>
+      <div class="page"><p class="text-primary">✨Best Selling  <br>Book of Month ✨</p></div>
+      <div class="page"><img src="images/books/bestSelling/book1.jpg" style="width:98%;height:98%" ></div>
+      <div class="page"> <div><img src="images/books/collection_collage.jpg" style="width:98%"></div> </div>
+      <div class="page"><p class="text-info">New Collection <br> are Here 📚</p></div>
+      <div class="page"><p class="text-primary">That's it For Today</p></div>
+  
+    </div>
+  </div>
+</div>
 
+{{-- ///////////////////////////Slider Ends//////////// --}}
 
         {{-- ///////////Books/////// --}}
         <h2 class="text-danger text-center mt-5" id="books">ALL Books</h2>
@@ -303,6 +318,39 @@
 </section>
 @include('/includes/footer')
 @include('/includes/scripts')
+
+<script>
+      var pages = document.getElementsByClassName('page');
+  for(var i = 0; i < pages.length; i++)
+    {
+      var page = pages[i];
+      if (i % 2 === 0)
+        {
+          page.style.zIndex = (pages.length - i);
+        }
+    }
+
+  document.addEventListener('DOMContentLoaded', function(){
+    for(var i = 0; i < pages.length; i++)
+      {
+        //Or var page = pages[i];
+        pages[i].pageNum = i + 1;
+        pages[i].onclick=function()
+          {
+            if (this.pageNum % 2 === 0)
+              {
+                this.classList.remove('flipped');
+                this.previousElementSibling.classList.remove('flipped');
+              }
+            else
+              {
+                this.classList.add('flipped');
+                this.nextElementSibling.classList.add('flipped');
+              }
+           }
+        }
+  })
+</script>
   
 </body>
 </html>
