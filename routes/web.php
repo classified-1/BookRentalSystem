@@ -7,6 +7,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/about', function () {
+    return view('about');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
 // Route::group(['middleware' => ['auth']], function () {
 //     Route::get('/', 'App\Http\Controllers\DashboardController@index')
 //         ->name('/');
@@ -21,14 +27,14 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/history', function () {
         return view('/userdash')->with("data", "History");
     });
+
+    ///////////Admin Dashboard Routes///////
+    Route::get('/addproduct', function () {
+        return view('/dashboard')->with("data", "addproduct");
+    });
 });
 
-Route::get('/about', function () {
-    return view('about');
-});
-Route::get('/contact', function () {
-    return view('contact');
-});
+
 
 
 
