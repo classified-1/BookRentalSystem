@@ -553,7 +553,7 @@ input[type="checkbox"]:focus {
   color: #f5a623;
 }
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 0px;
   height: 8px;
 }
 ::-webkit-scrollbar-track {
@@ -577,6 +577,7 @@ input[type="checkbox"]:focus {
 
 @media (min-width: 1200px) {
   .navbar-expand-xl .navbar-nav .nav-link {
+
     padding-left: 28px;
     padding-right: 28px;
   }

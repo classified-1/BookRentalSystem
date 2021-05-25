@@ -2,6 +2,7 @@
 <html  >
 <head>
   <!-- Site made with Mobirise Website Builder v5.3.5, https://mobirise.com -->
+  <title>Contact Us</title>
   @include('/includes/links')
   
   

@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    
     @include('admindash/includes/adminLinks')
   </head>
 
   <body >
+   
     {{-- ////////////Navbar Start////// --}}
    @include('admindash/includes/navbar')
 
@@ -17,7 +19,7 @@
           <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
             <div class="row">
               <div class="col-12">
-                <h2 class="tm-block-title d-inline-block">Add Product</h2>
+                <h2 class="tm-block-title d-inline-block">Add Book</h2>
               </div>
             </div>
             <div class="row tm-edit-product-row">
@@ -65,32 +67,22 @@
                     </select>
                   </div>
                   <div class="row">
-                      <div class="form-group mb-3 col-xs-12 col-sm-6">
+                    
+                      <div class="form-group mb-3 col-xs-12 col-sm-12">
                           <label
                             for="expire_date"
-                            >Expire Date
+                            >Book PDF
                           </label>
                           <input
-                            id="expire_date"
-                            name="expire_date"
-                            type="text"
-                            class="form-control validate"
+                            id="pdf"
+                            name="pdf"
+                            type="file"
+                            type="file" 
+                            class="btn btn-secondary btn-block mx-auto"
                             data-large-mode="true"
                           />
                         </div>
-                        <div class="form-group mb-3 col-xs-12 col-sm-6">
-                          <label
-                            for="stock"
-                            >Units In Stock
-                          </label>
-                          <input
-                            id="stock"
-                            name="stock"
-                            type="text"
-                            class="form-control validate"
-                            required
-                          />
-                        </div>
+
                   </div>
                   
               </div>
@@ -98,21 +90,21 @@
                 <div class="tm-product-img-dummy mx-auto">
                   <i
                     class="fas fa-cloud-upload-alt tm-upload-icon"
-                    onclick="document.getElementById('fileInput').click();"
+                    onclick="document.getElementById('imageInput').click();"
                   ></i>
                 </div>
                 <div class="custom-file mt-3 mb-3">
-                  <input id="fileInput" type="file" style="display:none;" />
+                  <input id="imageInput" type="file" style="display:none;" />
                   <input
                     type="button"
                     class="btn btn-primary btn-block mx-auto"
                     value="UPLOAD PRODUCT IMAGE"
-                    onclick="document.getElementById('fileInput').click();"
+                    onclick="document.getElementById('imageInput').click();"
                   />
                 </div>
               </div>
               <div class="col-12">
-                <button type="submit" class="btn btn-primary btn-block text-uppercase">Add Product Now</button>
+                <button type="submit" class="btn btn-primary btn-block text-uppercase">Add Book Now</button>
               </div>
             </form>
             </div>
@@ -121,3 +113,4 @@
       </div>
     </div>
     @include('admindash/includes/footer')
+

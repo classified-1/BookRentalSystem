@@ -4,8 +4,10 @@
   
  
   <title>Home</title>
-  
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i&display=swap" rel="stylesheet">
+
   @include('/includes/links')
+  
   <link rel="stylesheet" href="{{ asset('assets/indexpage/index.css')}}"> 
   
 </head>
@@ -239,8 +241,8 @@
                     <div class="image-wrap ">
                         <img src="assets/images/samad.jpeg" alt="">
                     </div>
-                    <div class="content-wrap mt-4">
-                        <h5 class="mbr-section-title card-title mbr-fonts-style mt-5 align-center m-0 display-5">
+                    <div class="content-wrap">
+                        <h5 class="mbr-section-title card-title mbr-fonts-style  align-center m-0 display-5">
                             M Ali</h5>
                         <h6 class="mbr-role mbr-fonts-style align-center mb-3 display-4">
                             <strong>Programmer</strong>
@@ -333,6 +335,12 @@
         </div>
     </div>
 </section>
+
+
+
+
+
+
 @include('/includes/footer')
 @include('/includes/scripts')
 
@@ -368,6 +376,6 @@
         }
   })
 </script>
-  
+    
 </body>
 </html>

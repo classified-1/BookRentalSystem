@@ -36,24 +36,14 @@
       </div>
       <div class="name">invoice.Pdf</div>
     </div>
-    <div class="item images">
-      <div class="icon_wrp">
-        <span class="icon"></span>
-      </div>
-      <div class="name">profile.png</div>
-    </div>
+
     <div class="item sheets">
       <div class="icon_wrp">
         <span class="icon"></span>
       </div>
       <div class="name">bill.doc</div>
     </div>
-    <div class="item images">
-      <div class="icon_wrp">
-        <span class="icon"></span>
-      </div>
-      <div class="name">profile.png</div>
-    </div>
+
     <div class="item pdfs">
       <div class="icon_wrp">
         <span class="icon"></span>
@@ -84,12 +74,7 @@
       </div>
       <div class="name">profile.png</div>
     </div>
-    <div class="item sheets">
-      <div class="icon_wrp">
-        <span class="icon"></span>
-      </div>
-      <div class="name">bill.doc</div>
-    </div>
+
     <div class="item pdfs">
       <div class="icon_wrp">
         <span class="icon"></span>
@@ -138,18 +123,9 @@
       </div>
       <div class="name">word.doc</div>
     </div>
-    <div class="item sheets">
-      <div class="icon_wrp">
-        <span class="icon"></span>
-      </div>
-      <div class="name">bill.doc</div>
-    </div>
-    <div class="item pdfs">
-      <div class="icon_wrp">
-        <span class="icon"></span>
-      </div>
-      <div class="name">invoice.Pdf</div>
-    </div>
+
+
+
   </div>
 </div>	
 <script src="{{ asset('assets/web/assets/jquery/jquery.min.js')}}"></script> 

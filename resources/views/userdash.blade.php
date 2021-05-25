@@ -1,4 +1,4 @@
-<x-app-layout>
+{{-- <x-app-layout>
     <x-slot name="header">
 
     </x-slot>
@@ -7,4 +7,4 @@
 
         @include('/userdash/userdashboard')
     </div>
-</x-app-layout>
+</x-app-layout> --}}

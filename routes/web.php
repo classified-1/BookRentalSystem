@@ -13,28 +13,35 @@ Route::get('/about', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
-// Route::group(['middleware' => ['auth']], function () {
-//     Route::get('/', 'App\Http\Controllers\DashboardController@index')
-//         ->name('/');
-// });
+
+
+
+///////////User Dashboard Routes///////
+
 Route::group(['middleware' => ['auth']], function () {
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')
         ->name('dashboard');
-    ///////////User Dashboard Routes///////
-    Route::get('/requestedbook', function () {
-        return view('/userdash')->with("data", "Requested Book");
-    });
-    Route::get('/history', function () {
-        return view('/userdash')->with("data", "History");
-    });
 
-    ///////////Admin Dashboard Routes///////
-    Route::get('/addproduct', function () {
-        return view('/dashboard')->with("data", "addproduct");
-    });
+    Route::get('/requestedbook', 'App\Http\Controllers\DashboardController@requestedbook')
+        ->name('dashboard');
+
+    Route::get('/history', 'App\Http\Controllers\DashboardController@history')
+        ->name('dashboard');
+
+    // Route::get('/history', function () {
+    //     return view('/userdash')->with("data", "History");
+    // });
 });
 
 
+////////////////////Admin dashboard Routes/////////
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/addbook', 'App\Http\Controllers\DashboardController@addbook')
+        ->name('dashboard');
+
+    Route::get('/booksrequest', 'App\Http\Controllers\DashboardController@booksrequest')
+        ->name('dashboard');
+});
 
 
 

@@ -11,10 +11,49 @@ class DashboardController extends Controller
     public function index()
     {
         if (Auth::user()->hasRole('Student')) {
+            return view('userdash/includes/BooksBorrowed');
+        } elseif (Auth::user()->hasRole('admin')) {
+            return view('admindash/includes/viewbook');
+        }
+    }
+
+    /////////Users Roles and Routes////////////
+    public function requestedbook()
+    {
+        if (Auth::user()->hasRole('Student')) {
+            return view('userdash/includes/requestedbook');
+        } elseif (Auth::user()->hasRole('admin')) {
+            return view('admindash/includes/viewbook');
+        }
+    }
+
+    public function history()
+    {
+        if (Auth::user()->hasRole('Student')) {
+            return view('userdash/includes/history');
+        } elseif (Auth::user()->hasRole('admin')) {
+            return view('admindash/includes/viewbook');
+        }
+    }
+
+    /////////Admin Roles and Routes////////////
+    public function addbook()
+    {
+        if (Auth::user()->hasRole('Student')) {
 
             return view('userdash');
         } elseif (Auth::user()->hasRole('admin')) {
-            return view('dashboard');
+            return view('admindash/includes/addbook');
+        }
+    }
+
+    public function booksrequest()
+    {
+        if (Auth::user()->hasRole('Student')) {
+
+            return view('userdash');
+        } elseif (Auth::user()->hasRole('admin')) {
+            return view('admindash/includes/booksrequest');
         }
     }
 }

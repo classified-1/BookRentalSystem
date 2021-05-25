@@ -1,7 +1,15 @@
 
-<link rel="stylesheet" href="{{asset('assets/userdashboard/BooksBorrowed/booksborrowed.css')}}">
+<head>
+  <link rel="stylesheet" href="{{asset('assets/userdashboard/BooksBorrowed/booksborrowed.css')}}">
 
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous"></head>
+
+<x-app-layout>
+  <x-slot name="header">
+
+  </x-slot>
+
+@include('userdash/includes/userdashboardheader')
 
 <section class="wrapper">
   <div class="container">
@@ -22,26 +30,26 @@
     <h3 class="my-0 text-white d-block text-light"><strong>Fine: </strong>100Rs</h3>
     
   </div>
-</div>
-          </div>
-        </div>
+  </div>
+    </div>
+    </div>
       </div></div>
 
-      
-     
+    </div>
   
-</div>
-  
-</div>
+  </div>
 </section>
 
 
 
 <script>
-function displayval(x){
-document.getElementById("returnbtn").classList.remove("retun-visibility");
-}
-function hideval(x){
-document.getElementById("returnbtn").classList.add("retun-visibility");
-}
-</script>
+  function displayval(x){
+  document.getElementById("returnbtn").classList.remove("retun-visibility");
+    }
+    function hideval(x){
+  document.getElementById("returnbtn").classList.add("retun-visibility");
+  }
+  </script>
+
+@include('userdash/includes/userdashboardfooter')
+</x-app-layout>
