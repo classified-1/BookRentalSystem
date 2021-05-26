@@ -48,6 +48,7 @@
           this.closest('form').submit();">
             <i class="fas fa-sign-out-alt"></i> Logout
           </a>
+          </form>
         </li>
 
       </ul>

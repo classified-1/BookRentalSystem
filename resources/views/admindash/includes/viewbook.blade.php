@@ -3,8 +3,9 @@
   <head>
     @include('admindash/includes/adminLinks')
   </head>
+  <title>View Book</title>
 <script src="{{asset('assets/userdashboard/user.js')}}"></script>
-
+</head>
 {{-- ////////////Navbar Start////// --}}
 
 @include('admindash/includes/navbar')
@@ -16,7 +17,7 @@
           <table  class="table table-hover tm-table-small tm-product-table pr-4">
             <thead>
               <tr>
-                <th scope="col">ID</th>
+                <th scope="col">Book Images</th>
                 <th scope="col">BOOK NAME</th>
                 <th scope="col">AUTHOR</th>
                 <th scope="col">CATEGORY</th>
@@ -26,21 +27,29 @@
             </thead>
             <tbody>
               <tr>
-                <th scope="row">1</th>
-                <td class="tm-product-name">Lorem Ipsum Product 1</td>
-                <td>1,450</td>
-                <td>FICTION</td>
-                <td>28 March 2019</td>
+                @forelse ($all_book as $key=>$data)
+               
+                <th scope="row"><img src="{{Storage::url($data->BookImg)}}" width="80px" height="80px"></th>
+                <td class="tm-product-name">{{$data->BookName}}</td>
+                <td>{{$data->AuthorName}}</td>
+                <td>{{$data->category_id}}</td>
+                <td>{{$data->created_at}}</td>
                 <td>
-                  <a href="#" class="tm-product-delete-link">
+                  <a href="destroy/{{$data->id}}" class="tm-product-delete-link">
                     <i class="far fa-trash-alt tm-product-delete-icon"></i>
                   </a>
-                  <a href="#" class="tm-product-delete-link">
+                  <a href="edit/{{$data->id}}" class="tm-product-delete-link">
                     <i class="fas fa-edit tm-product-delete-icon"></i>
                   </a>
                 </td>
               </tr>
-             
+              @empty
+              <tr>
+                <h3 class="text-light" style="position: absolute;top:8em;left:18em" >No data Found</h3>
+              
+         
+            </tr>
+            @endforelse
             
             </tbody>
           </table>

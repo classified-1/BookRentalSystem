@@ -41,6 +41,11 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/booksrequest', 'App\Http\Controllers\DashboardController@booksrequest')
         ->name('dashboard');
+    Route::get('create', 'App\Http\Controllers\BookController@create');
+    Route::post('store', 'App\Http\Controllers\BookController@store');
+    Route::get('destroy/{book}', 'App\Http\Controllers\BookController@destroy');
+    Route::get('edit/{book}', 'App\Http\Controllers\BookController@edit');
+    Route::post('update/{book}', 'App\Http\Controllers\BookController@update');
 });
 
 
