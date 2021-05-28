@@ -25,7 +25,8 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        //
+        $category = Category::all();
+        return view('admindash/includes/addCategory', compact('category'));
     }
 
     /**
@@ -36,7 +37,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required|max:255'
+        ]);
+
+        $a = Category::create($data);
+        return redirect(url('createCategory'));
     }
 
     /**
@@ -58,7 +64,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('admindash/includes/editCategory', compact('category'));
     }
 
     /**
@@ -70,7 +76,11 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $data = $request->validate([
+            'name' => 'required|max:255',
+        ]);
+        $category->update($data);
+        return redirect(url('createCategory'));
     }
 
     /**
@@ -81,6 +91,7 @@ class CategoryController extends Controller
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect(url('createCategory'));
     }
 }

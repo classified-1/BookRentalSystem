@@ -6,6 +6,7 @@
   <title>View Book</title>
 <script src="{{asset('assets/userdashboard/user.js')}}"></script>
 </head>
+
 {{-- ////////////Navbar Start////// --}}
 
 @include('admindash/includes/navbar')
@@ -32,7 +33,7 @@
                 <th scope="row"><img src="{{Storage::url($data->BookImg)}}" width="80px" height="80px"></th>
                 <td class="tm-product-name">{{$data->BookName}}</td>
                 <td>{{$data->AuthorName}}</td>
-                <td>{{$data->category_id}}</td>
+                <td>{{$data->Category->name}}</td>
                 <td>{{$data->created_at}}</td>
                 <td>
                   <a href="destroy/{{$data->id}}" class="tm-product-delete-link">

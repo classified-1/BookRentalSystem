@@ -56,7 +56,9 @@
                   <div class="form-group mb-3">
                     <label
                       for="category"
-                      >Category</label
+                      >Category
+                      <a href="{{url('createCategory')}}"><small  style="color:#F5A623;margin-left:10em">Want to add new Category?</small></a>
+                      </label
                     >
                     <select
                       class="custom-select tm-select-accounts"
@@ -66,6 +68,7 @@
                       @foreach($category_id as $category)
                       <option value="{{$category->id}}">{{$category->name}}</option>
                         @endforeach
+                        
                     </select>
                   </div>
                   <div class="row">

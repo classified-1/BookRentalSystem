@@ -16,10 +16,18 @@ class DashboardController extends Controller
         if (Auth::user()->hasRole('Student')) {
             return view('userdash/includes/BooksBorrowed');
         } elseif (Auth::user()->hasRole('admin')) {
-
-            $all_book = Book::all();
-
+            $all_book = Book::with('Category')->get();
             return view('admindash/includes/viewbook', compact('all_book'));
+        }
+    }
+    public function main()
+    {
+        if (Auth::user()->hasRole('Student')) {
+            $all_book = Book::with('Category')->get();
+            return view('index', compact('all_book'));
+        } elseif (Auth::user()->hasRole('admin')) {
+            $all_book = Book::with('Category')->get();
+            return view('index', compact('all_book'));
         }
     }
 

@@ -6,7 +6,7 @@ $(".btn").click(function(){
 
   $(".item").hide();
 
-  if(attr == "folders"){
+  if(attr == "Sci-Fi"){
     $("." + attr).show();
   }
   else if(attr == "files"){

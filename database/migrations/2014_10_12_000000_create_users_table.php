@@ -19,10 +19,14 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->foreignId("bookBorrow_Id")->references('id')->on('books');
             $table->rememberToken();
             $table->timestamps();
         });
+        Schema::table('users', function (Blueprint $table) {
+        });
     }
+
 
     /**
      * Reverse the migrations.

@@ -27,7 +27,6 @@ class BookController extends Controller
      */
     public function create()
     {
-        //
     }
 
     /**
@@ -73,7 +72,8 @@ class BookController extends Controller
     public function edit(Book $book)
     {
         $category_id = Category::all();
-        return view('admindash/includes/editbook', compact('book', 'category_id'));
+        $selected_category = Book::with('Category')->get();
+        return view('admindash/includes/editbook', compact('book', 'category_id', 'selected_category'));
     }
 
     /**

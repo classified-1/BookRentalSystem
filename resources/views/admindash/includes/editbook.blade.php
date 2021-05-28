@@ -53,13 +53,10 @@
                            <div class="form-group mb-3">
                               <label
                                  for="category"
-                                 >Category</label
-                                 >
-                              <select
-                                 class="custom-select tm-select-accounts"
-                                 id="category" name="category_id"
-                                 >
-                                 <option selected value="{{$book->category_id}}">{{$book->category_id}}</option>
+                                 >Category</label>
+                                 <select class="custom-select tm-select-accounts"
+                                 id="category" name="category_id">
+                             
                                  @foreach($category_id as $category)
                                  <option value="{{$category->id}}">{{$category->name}}</option>
                                  @endforeach
