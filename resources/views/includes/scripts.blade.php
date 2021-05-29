@@ -7,3 +7,5 @@
   </script>
   <script src="{{ asset('assets/touchswipe/jquery.touch-swipe.min.js')}}"></script> 
   <script src="{{ asset('assets/theme/js/script.js')}}"></script> 
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"></script>

@@ -3,20 +3,41 @@
 
 </head>
 <div class="wrapper">
+  {{-- ////////Category List////// --}}
   <div class="button_grp">
     <ul>
-      <li data-li="all" class="btn active">All</li>
-      <li data-li="Sci-Fi" class="btn">Sci-Fi</li>
-      <li data-li="files" class="btn">Files</li>
-      <li data-li="images" class="btn">Images</li>
-      <li data-li="sheets" class="btn">Sheets</li>
-      <li data-li="pdfs" class="btn">PDFs</li>
-      <li data-li="documents" class="btn">Documents</li>
+      <div class="container">
+        <div class="row">
+          <div class="col-9">  
+            <li data-li="all" class="btn active">All</li>
+      
+            @foreach($all_category as $key=>$data) 
+           
+            <li data-li="{{$data->name}}" class="btn">{{$data->name}}</li>
+      
+            @endforeach
+          </div>
+          <div class="vl col-1 mt-3" style="border-left: 2px solid #000000;
+          height: 2em;"></div>
+          <div class="col-2">
+            <span class="ml-auto">
+              <a href="/viewAllBook" style="position: relative;top:28%;font-size:1.3em">View All Books</a>
+            </span>
+          </div>
+        </div>
+      </div>
     </ul>
   </div>
+
+
+
+
+
+  {{-- Books to Display --}}
   <div class="maindiv">
     @forelse ($all_book as $key=>$data)
-    <div class="item sheets">
+   
+    <div class="item {{$data->Category->name}}">
       <img src="{{Storage::url($data->BookImg)}}" alt="" id="bookimg">
       <div class="addDashboardDiv"><a href="#" class="addDashboardLink">
         <i class="fas fa-plus-circle" class="tooltip" title="Add Book to Dashboard" style="font-size:30px"></i></a></div>

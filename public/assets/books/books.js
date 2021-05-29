@@ -9,19 +9,19 @@ $(".btn").click(function(){
   if(attr == "Sci-Fi"){
     $("." + attr).show();
   }
-  else if(attr == "files"){
+  else if(attr == "Technology"){
     $("." + attr).show();
   }
-  else if(attr == "images"){
+  else if(attr == "Science"){
     $("." + attr).show();
   }
-  else if(attr == "sheets"){
+  else if(attr == "Programming"){
     $("." + attr).show();
   }
-  else if(attr == "pdfs"){
+  else if(attr == "Literature"){
     $("." + attr).show();
   }
-  else if(attr == "documents"){
+  else if(attr == "Religion"){
     $("." + attr).show();
   }
   else{

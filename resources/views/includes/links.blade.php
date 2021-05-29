@@ -5,7 +5,7 @@
 <link rel="shortcut icon" href="{{asset('images/logo.png')}}" type="image/x-icon">
 <meta name="description" content="">
 
-<title>@yield('title')</title>
+
 
 <link rel="stylesheet" href="{{ asset('assets/web/assets/mobirise-icons2/mobirise2.css')}}">
 

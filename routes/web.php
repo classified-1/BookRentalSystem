@@ -54,6 +54,10 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('destroyC/{category}', 'App\Http\Controllers\CategoryController@destroy');
     Route::get('editC/{category}', 'App\Http\Controllers\CategoryController@edit');
     Route::get('updateC/{category}', 'App\Http\Controllers\CategoryController@update');
+
+    Route::get('viewAllBook', 'App\Http\Controllers\DashboardController@allBook');
+
+    Route::get('viewAllBook/action', 'App\Http\Controllers\DashboardController@action')->name('viewAllBook.action');
 });
 
 
