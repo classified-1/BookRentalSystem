@@ -202,8 +202,8 @@
 </section>
 
 @include('/includes/footer')
-    @include('/includes/scripts') 
+@include('/includes/scripts') 
   
-  
+ 
 </body>
 </html>

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 //////Index Page Route////////
 
 Route::get('/about', function () {
+
     return view('about');
 });
 Route::get('/contact', function () {
@@ -26,11 +27,6 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/history', 'App\Http\Controllers\DashboardController@history')
         ->name('dashboard');
-
-
-    // Route::get('/', function () {
-    //     return view('index');
-    // });
 });
 
 
@@ -44,7 +40,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('create', 'App\Http\Controllers\BookController@create');
 
     Route::post('store', 'App\Http\Controllers\BookController@store');
-    Route::get('destroy/{book}', 'App\Http\Controllers\BookController@destroy');
+    Route::DELETE('destroy/{book}', 'App\Http\Controllers\BookController@destroy');
 
     Route::get('edit/{book}', 'App\Http\Controllers\BookController@edit');
     Route::post('update/{book}', 'App\Http\Controllers\BookController@update');

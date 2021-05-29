@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Support\Facades\DB;
-
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\Book;
 use App\Models\Category;
 use Illuminate\Http\Request;
@@ -48,7 +48,9 @@ class BookController extends Controller
 
         $data['category_id'] = $request->category_id;
 
+
         $a = Book::create($data);
+        Alert::success('Configuration! Book Added Successfully');
         return redirect(url('dashboard'));
     }
 
@@ -98,6 +100,7 @@ class BookController extends Controller
 
 
         $book->update($data);
+        Alert::success('Configuration! Book values Updated Successfully');
         return redirect(url('dashboard'));
     }
 
@@ -109,7 +112,9 @@ class BookController extends Controller
      */
     public function destroy(Book $book)
     {
+
         $book->delete();
-        return redirect(url('dashboard'));
+        return response()->json(['status' => "Deleted Successfully"]);
+        // return redirect(url('dashboard'));
     }
 }
