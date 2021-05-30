@@ -135,9 +135,6 @@
                         <h6 class="mbr-role mbr-fonts-style align-center mb-3 display-4">
                             <strong>Programmer</strong>
                         </h6>
-                        <p class="card-text mbr-fonts-style align-center display-7">
-                            No special actions required, all sites you make with Mobirise are mobile-friendly.
-                        </p>
                         <div class="social-row display-7">
                             <div class="soc-item">
                                 <a href="" target="_blank">
@@ -172,9 +169,7 @@
                             Mohsin Raza</h5>
                         <h6 class="mbr-role mbr-fonts-style align-center mb-3 display-4">
                             <strong>Designer</strong></h6>
-                        <p class="card-text mbr-fonts-style align-center display-7">
-                            Use Mobirise website building software to create multiple sites for your clients.
-                        </p>
+
                         <div class="social-row display-7">
                             <div class="soc-item">
                                 <a href="" target="_blank">
@@ -209,9 +204,7 @@
                             Abdul Samad</h5>
                         <h6 class="mbr-role mbr-fonts-style align-center mb-3 display-4">
                             <strong>Game Develper</strong></h6>
-                        <p class="card-text mbr-fonts-style align-center display-7">
-                            Create multiple pages. Don't forget to set links to your pages after creating them.
-                        </p>
+
                         <div class="social-row display-7">
                             <div class="soc-item">
                                 <a href="" target="_blank">
@@ -247,9 +240,6 @@
                         <h6 class="mbr-role mbr-fonts-style align-center mb-3 display-4">
                             <strong>Programmer</strong>
                         </h6>
-                        <p class="card-text mbr-fonts-style align-center display-7">
-                            Each theme in the Mobirise site builder contains a set of unique blocks.
-                        </p>
                         <div class="social-row display-7">
                             <div class="soc-item">
                                 <a href="" target="_blank">
@@ -290,52 +280,50 @@
             <div class="item features-image сol-12 col-md-6 col-lg-4">
                 <div class="item-wrapper">
                     <div class="item-img">
-                        <img src="assets/images/product5.jpg" alt="" title="">
+                        <img src="assets/images/collection.jpg" alt="" title="">
                     </div>
                     <div class="item-content">
-                        <h5 class="item-title mbr-fonts-style display-4"><em>May 10, 2025</em></h5>
-                        <h6 class="item-subtitle mbr-fonts-style mt-1 display-7"><strong>Easy and Simple</strong></h6>
-                        <p class="mbr-text mbr-fonts-style mt-3 display-7">Mobirise Page Maker is a free and simple
-                            website builder - just drop site blocks to your page, add content and style it!</p>
+                        <h5 class="item-title mbr-fonts-style display-4"><em>{{
+                         Carbon\Carbon::now()->toDateTimeString()}}</em></h5>
+                        <h6 class="item-subtitle mbr-fonts-style mt-1 display-7"><strong>Book Collection </strong></h6>
+                        <p class="mbr-text mbr-fonts-style mt-3 display-7">We have added a large collection of books. You can find any book you want just search and add it to your dashboard</p>
                     </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a href="" class="btn item-btn btn-primary-outline display-7" target="_blank">Read More &gt;</a></div>
                 </div>
             </div>
             <div class="item features-image сol-12 col-md-6 col-lg-4">
                 <div class="item-wrapper">
                     <div class="item-img">
-                        <img src="assets/images/product4.jpg" alt="" title="">
+                        <img src="assets/images/reading.jpg" alt="" title="">
                     </div>
                     <div class="item-content">
-                        <h5 class="item-title mbr-fonts-style display-4"><em>Jan 09, 2025</em></h5>
-                        <h6 class="item-subtitle mbr-fonts-style mt-1 display-7"><strong>Automagically Mobile</strong>
+                        <h5 class="item-title mbr-fonts-style display-4"><em>{{
+                            Carbon\Carbon::now()->toDateTimeString()}}</em></h5>
+                        <h6 class="item-subtitle mbr-fonts-style mt-1 display-7"><strong>User Friendly Interface</strong>
                         </h6>
-                        <p class="mbr-text mbr-fonts-style mt-3 display-7">Mobirise Site Creator offers a huge
-                            collection of 3500+ site blocks, templates and themes with thousands flexible options. <br>
+                        <p class="mbr-text mbr-fonts-style mt-3 display-7">Ebook have very beautiful and user friendly interface. You do not need any tutorial to understand how to download/request book. <br>
                         </p>
                     </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a href="" class="btn item-btn btn-primary-outline display-7" target="_blank">Read More &gt;</a></div>
+
                 </div>
             </div>
             <div class="item features-image сol-12 col-md-6 col-lg-4">
                 <div class="item-wrapper">
                     <div class="item-img">
-                        <img src="assets/images/product3.jpg" alt="" title="">
+                        <img src="assets/images/book.jpg" alt="" title="">
                     </div>
                     <div class="item-content">
-                        <h5 class="item-title mbr-fonts-style display-4"><em>Jan 08, 2025</em></h5>
-                        <h6 class="item-subtitle mbr-fonts-style mt-1 display-7"><strong>Boost Your Ranking</strong></h6>
-                        <p class="mbr-text mbr-fonts-style mt-3 display-7">Mobirise Page Maker is a free and simple
-                            website builder - just drop site blocks to your page, add content and style it!</p>
+                        <h5 class="item-title mbr-fonts-style display-4"><em>{{
+                            Carbon\Carbon::now()->toDateTimeString()}}</em></h5>
+                        <h6 class="item-subtitle mbr-fonts-style mt-1 display-7"><strong>Request As many As</strong></h6>
+                        <p class="mbr-text mbr-fonts-style mt-3 display-7">Now You can Request As many As Books you want.</p>
                     </div>
-                    <div class="mbr-section-btn item-footer mt-2"><a href="" class="btn item-btn btn-primary-outline display-7" target="_blank">Read More &gt;</a></div>
                 </div>
             </div>
 
         </div>
     </div>
 </section>
-
+<a href="#" class="back-to-top"><i class="fas fa-chevron-circle-up" style="font-size: 2.4em"></i></a>
 
 
 
@@ -375,6 +363,28 @@
            }
         }
   })
+
+  /////////Back to top/////
+  $(document).ready(function(){
+ 
+ //Check to see if the window is top if not then display button
+ $(window).scroll(function(){
+  // Show button after 700px
+  var showAfter = 700;
+  if ($(this).scrollTop() > showAfter ) { 
+   $('.back-to-top').fadeIn();
+  } else { 
+   $('.back-to-top').fadeOut();
+  }
+    });
+ 
+ //Click event to scroll to top
+ $('.back-to-top').click(function(){
+  $('html, body').animate({scrollTop : 0},800);
+  return false;
+ });
+ 
+    });
 </script>
     
 </body>

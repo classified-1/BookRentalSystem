@@ -38,9 +38,9 @@
                 <td>{{$data->Category->name}}</td>
                 <td>{{$data->created_at}}</td>
                 <td>
-                  <a href="javascript:void(0)" class="tm-product-delete-link deletebtn" >
+                  <button  class="tm-product-delete-link deletebtn" >
                     <i class="far fa-trash-alt tm-product-delete-icon" ></i>
-                  </a>
+                  </button>
                   <a href="edit/{{$data->id}}" class="tm-product-delete-link">
                     <i class="fas fa-edit tm-product-delete-icon"></i>
                   </a>

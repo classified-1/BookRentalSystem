@@ -39,8 +39,15 @@
    
     <div class="item {{$data->Category->name}}">
       <img src="{{Storage::url($data->BookImg)}}" alt="" id="bookimg">
+      @if (Auth::check())  
       <div class="addDashboardDiv"><a href="#" class="addDashboardLink">
-        <i class="fas fa-plus-circle" class="tooltip" title="Add Book to Dashboard" style="font-size:30px"></i></a></div>
+        <i class="fas fa-plus-circle" class="tooltip" title="Add Book to Dashboard" style="font-size:30px;position: relative;right:0.5em"></i></a></div>
+
+        @else
+        <div class="addDashboardDiv" style="background-color: rgb(255, 255, 255) !important;"> <h6 class="text-center text-info"  style="font-size: 15px">Signin or Register to Request Book</h6 > </div>
+        
+        @endif
+        
     </div>  
     @empty
       <h3 class="text-light" style="position: absolute;top:8em;left:18em" >No data Found</h3>

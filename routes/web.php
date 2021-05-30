@@ -6,19 +6,19 @@ use Illuminate\Support\Facades\Route;
 //////Index Page Route////////
 
 Route::get('/about', function () {
-
     return view('about');
 });
 Route::get('/contact', function () {
     return view('contact');
 });
 
-
+Route::get('/', 'App\Http\Controllers\DashboardController@main')
+    ->name('dashboard');
 ///////////User Dashboard Routes///////
 
 Route::group(['middleware' => ['auth']], function () {
-    Route::get('/', 'App\Http\Controllers\DashboardController@main')
-        ->name('dashboard');
+
+
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')
         ->name('dashboard');
 
@@ -50,13 +50,11 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('destroyC/{category}', 'App\Http\Controllers\CategoryController@destroy');
     Route::get('editC/{category}', 'App\Http\Controllers\CategoryController@edit');
     Route::get('updateC/{category}', 'App\Http\Controllers\CategoryController@update');
-
-    Route::get('viewAllBook', 'App\Http\Controllers\DashboardController@allBook');
-
-    Route::get('viewAllBook/action', 'App\Http\Controllers\DashboardController@action')->name('viewAllBook.action');
 });
 
+Route::get('viewAllBook', 'App\Http\Controllers\DashboardController@allBook');
 
+Route::get('viewAllBook/action', 'App\Http\Controllers\DashboardController@action')->name('viewAllBook.action');
 
 
 require __DIR__ . '/auth.php';

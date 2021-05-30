@@ -25,28 +25,18 @@ class DashboardController extends Controller
 
 
     /////Take u to Home Page///
+
     public function main()
     {
-        if (Auth::user()->hasRole('Student')) {
-            $all_book = Book::with('Category')->get()->take(20);
-            $all_category = Category::all();
-            return view('index', compact('all_book', 'all_category'));
-        } elseif (Auth::user()->hasRole('admin')) {
-
-            $all_book = Book::with('Category')->get()->take(20);
-            $all_category = Category::all();
-            return view('index', compact('all_book', 'all_category'));
-        }
+        $all_book = Book::with('Category')->get()->take(20);
+        $all_category = Category::all();
+        return view('index', compact('all_book', 'all_category'));
     }
 
     ////////All Book Page with AJAX search////////
     public function allBook()
     {
-        if (Auth::user()->hasRole('Student')) {
-            return view('allBook');
-        } elseif (Auth::user()->hasRole('admin')) {
-            return view('allBook');
-        }
+        return view('allBook');
     }
 
     public function action(Request $request)
@@ -66,13 +56,18 @@ class DashboardController extends Controller
             $total_row = $data->count();
             if ($total_row > 0) {
                 foreach ($data as $row) {
-                    $output .= '
-                    <div class="item">
-        <img src="' .  "storage/" . $row->BookName . '"  id="bookimg">
-        <div class="addDashboardDiv"><a href="#" class="addDashboardLink">
-          <i class="fas fa-plus-circle" class="tooltip" title="Add Book to Dashboard" style="font-size:30px"></i></a></div>
-      </div>              
-        ';
+                    $output .= "";
+                    if (Auth::user()->hasRole('Student')) {
+                        $output .= '
+                        <div class="item">
+            <img src="' .  "storage/" . $row->BookName . '"  id="bookimg">
+          
+            <div class="addDashboardDiv"><a href="#" class="addDashboardLink">
+            <i class="fas fa-plus-circle" class="tooltip" title="Add Book to Dashboard" style="font-size:30px;position: relative;right:0.5em"></i></a>
+            </div>
+          </div>              
+            ';
+                    }
                 }
             } else {
                 $output = '

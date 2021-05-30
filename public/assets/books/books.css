@@ -59,8 +59,8 @@ body{
 	box-shadow: 1px 1px 3px rgba(0,0,0,0.125);
 }
 .addDashboardDiv{
-	background-color: rgba(255, 255, 255, 0.945);
-	width: 200px;
+	background-color: rgba(255, 255, 255, 0.932);
+	width:12em !important;left:1em;
 	position: relative;
 	top: -3.55em;
 	padding:3px;
