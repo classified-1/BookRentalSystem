@@ -29,19 +29,24 @@
     </ul>
   </div>
 
-
-
-
-
   {{-- Books to Display --}}
   <div class="maindiv">
     @forelse ($all_book as $key=>$data)
    
     <div class="item {{$data->Category->name}}">
       <img src="{{Storage::url($data->BookImg)}}" alt="" id="bookimg">
-      @if (Auth::check())  
-      <div class="addDashboardDiv"><a href="#" class="addDashboardLink">
-        <i class="fas fa-plus-circle" class="tooltip" title="Add Book to Dashboard" style="font-size:30px;position: relative;right:0.5em"></i></a></div>
+      @if (Auth::check())
+
+      <div class="addDashboardDiv">
+        <form action="request" method="POST">
+          @csrf
+          @method("POST")
+          <input type="hidden" value="{{$data->id}}" name="book_id">
+          <input type="hidden" value="{{Auth::user()->id}}" name="user_id">
+          <button  type="submit" class="addDashboardLink text-primary" style="border:none !important;background:none">
+            <i class="fas fa-plus-circle" class="tooltip" title="Add Book to Dashboard" style="font-size:30px;position: relative;right:0.5em"></i></button>
+        </form>
+      </div>
 
         @else
         <div class="addDashboardDiv" style="background-color: rgb(255, 255, 255) !important;"> <h6 class="text-center text-info"  style="font-size: 15px">Signin or Register to Request Book</h6 > </div>

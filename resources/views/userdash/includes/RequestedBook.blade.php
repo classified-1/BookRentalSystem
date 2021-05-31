@@ -16,19 +16,21 @@
   <div class="container">
   
   <div class="row">
- <div class="col-sm-4"><div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
-         <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+    @forelse ($reqBook as $key=>$data)
+ <div class="col-sm-4">
+   <div class="card text-white card-has-bg click-col" style="background-image:url('{{Storage::url($data->Book->BookImg)}}');">
         <div class="card-img-overlay d-flex flex-column">
          <div class="card-body">
-        
-            <h4 class="text-danger mb-2 animate-flicker p-2" style="background-color: #1414148e">Pending Approval</h4>
-
-           
+            <h4 class="text-danger mb-2 animate-flicker p-2" style="background-color: #1414148e">Pending Approval</h4>  
           </div>
         
           </div>
         </div>
-      </div></div>
+      </div>
+      @empty
+      <h3 class="text-dark" style="position: absolute;top:8em;left:25em" >No Book Requested</h3>
+  @endforelse
+    </div>
      
   
 </div>

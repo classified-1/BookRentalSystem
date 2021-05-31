@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\RequestedBook;
 use Illuminate\Http\Request;
 
@@ -14,7 +15,6 @@ class RequestedBookController extends Controller
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -27,6 +27,14 @@ class RequestedBookController extends Controller
         //
     }
 
+    public function approve(Request $request)
+    {
+        $reqid = RequestedBook::find($request->reqid);
+        $reqid->status = 1;
+        $reqid->save();
+        return redirect(url('booksrequest'));
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -35,7 +43,21 @@ class RequestedBookController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data = $request->validate([
+            'book_id' => 'required',
+            'user_id' => 'required',
+        ]);
+        $a = RequestedBook::create($data);
+        Alert::success('Request Submitted Successfully. View Dashboard for Book Approval Status');
+        return redirect(url('/'));
+    }
+
+    public function returnBook(Request $request)
+    {
+        $reqid = RequestedBook::find($request->reqid);
+        $reqid->status = 1;
+        $reqid->save();
+        return redirect(url('booksrequest'));
     }
 
     /**

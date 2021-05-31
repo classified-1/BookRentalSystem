@@ -17,8 +17,6 @@ Route::get('/', 'App\Http\Controllers\DashboardController@main')
 ///////////User Dashboard Routes///////
 
 Route::group(['middleware' => ['auth']], function () {
-
-
     Route::get('/dashboard', 'App\Http\Controllers\DashboardController@index')
         ->name('dashboard');
 
@@ -27,6 +25,8 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/history', 'App\Http\Controllers\DashboardController@history')
         ->name('dashboard');
+    Route::post('/request', 'App\Http\Controllers\RequestedBookController@store');
+    Route::post('/returnBook', 'App\Http\Controllers\RequestedBookController@returnBook');
 });
 
 
@@ -50,6 +50,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('destroyC/{category}', 'App\Http\Controllers\CategoryController@destroy');
     Route::get('editC/{category}', 'App\Http\Controllers\CategoryController@edit');
     Route::get('updateC/{category}', 'App\Http\Controllers\CategoryController@update');
+
+    ///////Book request Approve///////
+    Route::post('reqapprove', 'App\Http\Controllers\RequestedBookController@approve');
 });
 
 Route::get('viewAllBook', 'App\Http\Controllers\DashboardController@allBook');

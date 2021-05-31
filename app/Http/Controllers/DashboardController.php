@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\RequestedBook;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
@@ -16,7 +17,11 @@ class DashboardController extends Controller
     public function index()
     {
         if (Auth::user()->hasRole('Student')) {
-            return view('userdash/includes/BooksBorrowed');
+            $BooksBorrowed =  RequestedBook::with('Book')
+                ->where('status', '1')
+                ->where('user_id', Auth::user()->id)
+                ->get();
+            return view('userdash/includes/BooksBorrowed', compact('BooksBorrowed'));
         } elseif (Auth::user()->hasRole('admin')) {
             $all_book = Book::with('Category')->get();
             return view('admindash/includes/viewbook', compact('all_book'));
@@ -90,7 +95,11 @@ class DashboardController extends Controller
     public function requestedbook()
     {
         if (Auth::user()->hasRole('Student')) {
-            return view('userdash/includes/requestedbook');
+            $reqBook =  RequestedBook::with('Book')
+                ->where('status', '0')
+                ->where('user_id', Auth::user()->id)
+                ->get();
+            return view('userdash/includes/requestedbook', compact('reqBook'));
         } elseif (Auth::user()->hasRole('admin')) {
             return view('admindash/includes/viewbook');
         }
@@ -99,7 +108,12 @@ class DashboardController extends Controller
     public function history()
     {
         if (Auth::user()->hasRole('Student')) {
-            return view('userdash/includes/history');
+            $histroy =  RequestedBook::with('Book')
+                ->where('status', '1')
+                ->orWhere('status', '0')
+                ->where('user_id', Auth::user()->id)
+                ->get();
+            return view('userdash/includes/history', compact('histroy'));
         } elseif (Auth::user()->hasRole('admin')) {
             return view('admindash/includes/viewbook');
         }
@@ -123,7 +137,8 @@ class DashboardController extends Controller
 
             return view('userdash');
         } elseif (Auth::user()->hasRole('admin')) {
-            return view('admindash/includes/booksrequest');
+            $requestDetails = RequestedBook::with('Book', "User")->get();
+            return view('admindash/includes/booksrequest', compact('requestDetails'));
         }
     }
 }

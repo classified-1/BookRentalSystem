@@ -18,7 +18,7 @@
 
 <h6 class=" text-light">
 
-  <h6 class="ml-auto text-light">Error msgs here</h6>
+ 
 </header>
 
 <aside class="sidenav">

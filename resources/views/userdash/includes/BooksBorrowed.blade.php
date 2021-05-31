@@ -15,26 +15,41 @@
   <div class="container">
   
   <div class="row">
- <div class="col-sm-4" id="cardid" ><div class="card text-white card-has-bg click-col" style="background-image:url('https://source.unsplash.com/600x900/?tech,street');">
-         <img class="card-img d-none" src="https://source.unsplash.com/600x900/?tech,street" alt="Goverment Lorem Ipsum Sit Amet Consectetur dipisi?">
+    @forelse ($BooksBorrowed as $key=>$data)
+ <div class="col-sm-4" id="cardid" ><div class="card text-white card-has-bg click-col" style="background-image:url('{{Storage::url($data->Book->BookImg)}}');">
+
         <div class="card-img-overlay d-flex flex-column">
          <div class="card-body">
             <small class="card-meta mb-2">Thought Leadership</small>
             <h4 class="card-title mt-0 "><a class="text-white" herf="#">Goverment Lorem Ipsum Sit Amet Consectetur dipisi?</a></h4>
            <small><i class="far fa-clock"></i> October 15, 2020</small>
           </div>
-          <div class="card-footer">
-            <a class="btn btn-info p-2 w-100 " id="returnbtn" >Return</a>
-           <div class="media">
-  <div class="media-body bg-danger pl-4 pt-2 pb-2"> 
-    <h3 class="my-0 text-white d-block text-light"><strong>Fine: </strong>100Rs</h3>
-    
-  </div>
-  </div>
-    </div>
-    </div>
-      </div></div>
 
+          {{-- /////////Return Button//// --}}
+          <div class="card-footer">
+            @if($data->status==1)
+            <form action="returnBook" method="post">
+                @csrf
+                <input type="hidden" name="bookid" value="{{$data->Book->id}}" >
+                <button type="submit" id="returnbtn" class="btn btn-info p-2 w-100" >
+                  Return
+                      </button>
+                  </form>
+            @endif
+            
+
+            {{-- ///////Fine//// --}}
+        <div class="media">
+          <div class="media-body bg-danger pl-4 pt-2 pb-2"> 
+          <h3 class="my-0 text-white d-block text-light"><strong>Fine: </strong>100Rs</h3>
+          </div>
+          </div>
+        </div>
+          </div>
+      </div></div>
+      @empty
+      <h3 class="text-dark" style="position: absolute;top:8em;left:25em" >No Book Borrowed</h3>
+  @endforelse
     </div>
   
   </div>

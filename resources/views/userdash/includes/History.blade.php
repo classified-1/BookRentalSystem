@@ -14,20 +14,26 @@
    <table cellspacing="0">
      <tr>
         <th>Picture</th>
-        <th class="text-center">Name</th>
-        <th class="text-center">Borrow Date</th>
-        <th class="text-center">Return Date</th>
+        <th class="text-center">Book Name</th>
         <th class="text-center" width="230">Status</th>
         <th class="text-center" width="230">Fine</th>
      </tr>
+     @forelse ($histroy as $key=>$data)
      <tr>
-        <td><img src="https://source.unsplash.com/600x900/?tech,street" alt="" /></td>
-        <td class="text-center">John Doe</td>
-        <td class="text-center">01-07-2020</td>
-        <td class="text-center">01-08-2020</td>
-        <td class="text-center">Returned</td>
+        <td><img src="{{Storage::url($data->Book->BookImg)}}" /></td>
+        <td class="text-center">{{$data->Book->BookName}}</td>
+       
+           @if($data->status==1)
+           <td class="text-center text-success">Approved</td>
+           @else
+           <td class="text-center">Pending</td>
+           @endif
+        
         <td class="text-center">0</td>
      </tr>
+     @empty
+     <tr class="text-center" ><th colSpan="6" class="pt-5 pb-5">No Book Requested</th></tr>
+ @endforelse
 </table>
 </div>
 @include('userdash/includes/userdashboardfooter')

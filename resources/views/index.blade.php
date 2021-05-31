@@ -109,6 +109,7 @@
 {{-- ///////////////////////////Slider Ends//////////// --}}
 
         {{-- ///////////Books/////// --}}
+
         <h2 class="text-danger text-center mt-5" id="books">ALL Books</h2>
         @include('books')
 
@@ -386,6 +387,8 @@
  
     });
 </script>
-    
+
+{{-- //////Sweet Alert/// --}}
+@include('sweetalert::alert')
 </body>
 </html>
