@@ -18,20 +18,22 @@
     @forelse ($BooksBorrowed as $key=>$data)
  <div class="col-sm-4" id="cardid" ><div class="card text-white card-has-bg click-col" style="background-image:url('{{Storage::url($data->Book->BookImg)}}');">
 
-        <div class="card-img-overlay d-flex flex-column">
+        <div class="card-img-overlay d-flex flex-column" onmousemove="displayval()" onmouseout="hideval()">
          <div class="card-body">
-            <small class="card-meta mb-2">Thought Leadership</small>
-            <h4 class="card-title mt-0 "><a class="text-white" herf="#">Goverment Lorem Ipsum Sit Amet Consectetur dipisi?</a></h4>
+            <h5 class="card-meta ">{{$data->Book->BookName}}</h5>
+            <small class="card-meta text-light mb-5 ml-4">By: {{$data->Book->AuthorName}}</small>
+            <h4 class="card-title mt-5 "><a class="text-white" herf="#">Return it Before</a></h4>
            <small><i class="far fa-clock"></i> October 15, 2020</small>
           </div>
 
           {{-- /////////Return Button//// --}}
+        </form>
           <div class="card-footer">
             @if($data->status==1)
             <form action="returnBook" method="post">
                 @csrf
-                <input type="hidden" name="bookid" value="{{$data->Book->id}}" >
-                <button type="submit" id="returnbtn" class="btn btn-info p-2 w-100" >
+                <input type="hidden" name="reqid" value="{{$data->id}}" >
+                <button type="submit" id="{{$data->id}}" class="btn btn-info p-2 w-100 returnit " >
                   Return
                       </button>
                   </form>
@@ -57,14 +59,7 @@
 
 
 
-<script>
-  function displayval(x){
-  document.getElementById("returnbtn").classList.remove("retun-visibility");
-    }
-    function hideval(x){
-  document.getElementById("returnbtn").classList.add("retun-visibility");
-  }
-  </script>
 
 @include('userdash/includes/userdashboardfooter')
+@include('sweetalert::alert')
 </x-app-layout>

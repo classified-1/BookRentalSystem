@@ -45,7 +45,7 @@
                                   </form>
                             @endif
                       {{-- ////Approve MSG/// --}}
-                      @if($data->status==1)
+                      @if($data->status==1 || $data->status==-1)
                       <h6 class="text-light" style="font-size: 17px">Request Accepted</h6>
                       @endif
                     </div>
@@ -54,8 +54,6 @@
                     @empty
                     <tr>
                       <h3 class="text-light" style="position: absolute;top:8em;left:18em" >No data Found</h3>
-                    
-               
                   </tr>
                   @endforelse                  
                   </tbody>

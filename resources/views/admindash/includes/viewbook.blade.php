@@ -25,7 +25,7 @@
                 <th scope="col">AUTHOR</th>
                 <th scope="col">CATEGORY</th>
                 <th scope="col">ADDED ON</th>
-                <th scope="col">&nbsp;</th>
+                <th scope="col">ACTIONS</th>
               </tr>
             </thead>
             <tbody>
@@ -36,7 +36,7 @@
                 <td class="tm-product-name">{{$data->BookName}}</td>
                 <td>{{$data->AuthorName}}</td>
                 <td>{{$data->Category->name}}</td>
-                <td>{{$data->created_at}}</td>
+                <td>{{$data->created_at->format('d-M-Y h A')}}</td>
                 <td>
                   <button  class="tm-product-delete-link deletebtn" >
                     <i class="far fa-trash-alt tm-product-delete-icon" ></i>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2021 at 02:57 PM
+-- Generation Time: May 31, 2021 at 12:48 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.3.27
 
@@ -112,7 +112,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2021_05_15_111122_laratrust_setup_tables', 2),
 (5, '2021_05_26_110516_create_categories_table', 3),
-(6, '2021_05_26_110629_create_books_table', 3);
+(6, '2021_05_26_110629_create_books_table', 3),
+(7, '2021_05_29_184600_create_requested_books_table', 4);
 
 -- --------------------------------------------------------
 
@@ -207,6 +208,31 @@ CREATE TABLE `permission_user` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `requested_books`
+--
+
+CREATE TABLE `requested_books` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT 0,
+  `book_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `requested_books`
+--
+
+INSERT INTO `requested_books` (`id`, `status`, `book_id`, `user_id`, `created_at`, `updated_at`) VALUES
+(19, 0, 29, 7, '2021-05-30 10:46:41', '2021-05-30 14:09:38'),
+(20, 0, 32, 7, '2021-05-30 10:56:12', '2021-05-30 14:10:12'),
+(22, 1, 32, 8, '2021-05-30 11:49:47', '2021-05-30 11:49:47'),
+(24, 0, 31, 8, '2021-05-30 14:12:55', '2021-05-30 14:12:55');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `roles`
 --
 
@@ -251,7 +277,8 @@ INSERT INTO `role_user` (`role_id`, `user_id`, `user_type`) VALUES
 (2, 4, 'App\\Models\\User'),
 (2, 5, 'App\\Models\\User'),
 (2, 6, 'App\\Models\\User'),
-(2, 7, 'App\\Models\\User');
+(2, 7, 'App\\Models\\User'),
+(2, 8, 'App\\Models\\User');
 
 -- --------------------------------------------------------
 
@@ -276,7 +303,8 @@ CREATE TABLE `users` (
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
 (3, 'Admin', 'admin@admin.com', NULL, '$2y$10$Iy0YAscaqMDhgOjXIe3JLuKx4Oh/0YpFrgTJNU/7tWw2ZSdwgVt0a', NULL, '2021-05-15 07:49:17', '2021-05-15 07:49:17'),
-(7, 'Gary Hoffman', 'motawe@mailinator.com', NULL, '$2y$10$wjzcHkk7h3kvdep64U81QeRsbwJ4PupaS1HTouLtizUccU.yGVPe2', NULL, '2021-05-30 04:59:46', '2021-05-30 04:59:46');
+(7, 'Gary Hoffman', 'motawe@mailinator.com', NULL, '$2y$10$wjzcHkk7h3kvdep64U81QeRsbwJ4PupaS1HTouLtizUccU.yGVPe2', NULL, '2021-05-30 04:59:46', '2021-05-30 04:59:46'),
+(8, 'Hassan Khan', 'thehk12@yopmail.com', NULL, '$2y$10$JcLVz69qZ/q8f28v8MzVEuXJeUEqaC0EQjvzO/rzQFOMB/aYwpUCq', NULL, '2021-05-30 11:49:38', '2021-05-30 11:49:38');
 
 --
 -- Indexes for dumped tables
@@ -336,6 +364,14 @@ ALTER TABLE `permission_user`
   ADD KEY `permission_user_permission_id_foreign` (`permission_id`);
 
 --
+-- Indexes for table `requested_books`
+--
+ALTER TABLE `requested_books`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `requested_books_book_id_foreign` (`book_id`),
+  ADD KEY `requested_books_user_id_foreign` (`user_id`);
+
+--
 -- Indexes for table `roles`
 --
 ALTER TABLE `roles`
@@ -382,13 +418,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `permissions`
 --
 ALTER TABLE `permissions`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `requested_books`
+--
+ALTER TABLE `requested_books`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 
 --
 -- AUTO_INCREMENT for table `roles`
@@ -400,7 +442,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- Constraints for dumped tables
@@ -424,6 +466,13 @@ ALTER TABLE `permission_role`
 --
 ALTER TABLE `permission_user`
   ADD CONSTRAINT `permission_user_permission_id_foreign` FOREIGN KEY (`permission_id`) REFERENCES `permissions` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `requested_books`
+--
+ALTER TABLE `requested_books`
+  ADD CONSTRAINT `requested_books_book_id_foreign` FOREIGN KEY (`book_id`) REFERENCES `books` (`id`),
+  ADD CONSTRAINT `requested_books_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
 
 --
 -- Constraints for table `role_user`

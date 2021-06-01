@@ -110,8 +110,10 @@ class DashboardController extends Controller
         if (Auth::user()->hasRole('Student')) {
             $histroy =  RequestedBook::with('Book')
                 ->where('status', '1')
+                ->orWhere('status', '-1')
                 ->orWhere('status', '0')
                 ->where('user_id', Auth::user()->id)
+                ->orderBy('id', 'DESC')
                 ->get();
             return view('userdash/includes/history', compact('histroy'));
         } elseif (Auth::user()->hasRole('admin')) {
@@ -137,8 +139,16 @@ class DashboardController extends Controller
 
             return view('userdash');
         } elseif (Auth::user()->hasRole('admin')) {
-            $requestDetails = RequestedBook::with('Book', "User")->get();
+            $requestDetails = RequestedBook::with('Book', "User")->orderBy('id', 'DESC')->get();
             return view('admindash/includes/booksrequest', compact('requestDetails'));
         }
+    }
+
+    public function adminHistroy()
+    {
+        $adminReqHistroy = RequestedBook::with('Book', "User")->orderBy('created_at', 'DESC')->get();
+        $booksHistroy = Book::all();
+
+        return view('admindash/includes/history', compact('adminReqHistroy', 'booksHistroy'));
     }
 }

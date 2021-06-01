@@ -18,6 +18,7 @@ class CreateRequestedBooksTable extends Migration
             $table->boolean("status")->default(false);
             $table->foreignId("book_id")->references('id')->on('books');
             $table->foreignId("user_id")->references('id')->on('users');
+            $table->integer("fine");
             $table->timestamps();
         });
     }

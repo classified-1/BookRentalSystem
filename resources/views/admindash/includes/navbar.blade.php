@@ -39,6 +39,11 @@
             <i class="fas fa-clipboard-check"></i> Book Request
           </a>
         </li>
+        <li class="nav-item " id="hs">
+          <a class="nav-link " href="{{url('adminHistroy')}}">
+            <i class="fas fa-history"></i>History
+          </a>
+        </li>
         
 
         <li class="nav-item mt-2">
@@ -67,5 +72,7 @@
     document.getElementById("ab").classList.add("active")
   }   else if(window.location.pathname=="/booksrequest"){
     document.getElementById("br").classList.add("active")
+    else if(window.location.pathname=="/adminHistroy"){
+    document.getElementById("hs").classList.add("active")
   } 
 </script>

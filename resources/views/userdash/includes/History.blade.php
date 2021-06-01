@@ -25,8 +25,10 @@
        
            @if($data->status==1)
            <td class="text-center text-success">Approved</td>
+           @elseif($data->status==-1)
+           <td class="text-center text-primary">Returned</td>
            @else
-           <td class="text-center">Pending</td>
+           <td class="text-center text-danger">Pending</td>
            @endif
         
         <td class="text-center">0</td>

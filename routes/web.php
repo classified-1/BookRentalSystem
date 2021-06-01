@@ -37,6 +37,10 @@ Route::group(['middleware' => ['auth']], function () {
 
     Route::get('/booksrequest', 'App\Http\Controllers\DashboardController@booksrequest')
         ->name('dashboard');
+    ///////Admin History///////
+    Route::get('adminHistroy', 'App\Http\Controllers\DashboardController@adminHistroy');
+
+
     Route::get('create', 'App\Http\Controllers\BookController@create');
 
     Route::post('store', 'App\Http\Controllers\BookController@store');

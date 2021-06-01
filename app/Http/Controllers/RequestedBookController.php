@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use Illuminate\Support\Facades\Auth;
 use RealRashid\SweetAlert\Facades\Alert;
 use App\Models\RequestedBook;
 use Illuminate\Http\Request;
@@ -55,9 +57,10 @@ class RequestedBookController extends Controller
     public function returnBook(Request $request)
     {
         $reqid = RequestedBook::find($request->reqid);
-        $reqid->status = 1;
+        $reqid->status = -1;
         $reqid->save();
-        return redirect(url('booksrequest'));
+        Alert::success('Book Returned Successfully');
+        return redirect(url('dashboard'));
     }
 
     /**
