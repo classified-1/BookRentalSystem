@@ -57,10 +57,15 @@ class RequestedBookController extends Controller
     public function returnBook(Request $request)
     {
         $reqid = RequestedBook::find($request->reqid);
-        $reqid->status = -1;
-        $reqid->save();
-        Alert::success('Book Returned Successfully');
-        return redirect(url('dashboard'));
+        if ($reqid->fine == 0) {
+            $reqid->status = -1;
+            $reqid->save();
+            Alert::success('Book Returned Successfully');
+            return redirect(url('dashboard'));
+        } else {
+            Alert::warning('You cannot return Book! Pay your fine');
+            return redirect(url('dashboard'));
+        }
     }
 
     /**

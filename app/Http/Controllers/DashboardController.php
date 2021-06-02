@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Session;
 use App\Models\RequestedBook;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -17,6 +18,8 @@ class DashboardController extends Controller
     public function index()
     {
         if (Auth::user()->hasRole('Student')) {
+
+
             $BooksBorrowed =  RequestedBook::with('Book')
                 ->where('status', '1')
                 ->where('user_id', Auth::user()->id)
@@ -46,6 +49,7 @@ class DashboardController extends Controller
 
     public function action(Request $request)
     {
+        $csrf = $request->session()->token();
         if ($request->ajax()) {
             $output = '';
             $query = $request->get('query');
@@ -66,9 +70,16 @@ class DashboardController extends Controller
                         $output .= '
                         <div class="item">
             <img src="' .  "storage/" . $row->BookName . '"  id="bookimg">
-          
-            <div class="addDashboardDiv"><a href="#" class="addDashboardLink">
-            <i class="fas fa-plus-circle" class="tooltip" title="Add Book to Dashboard" style="font-size:30px;position: relative;right:0.5em"></i></a>
+            <div class="addDashboardDiv">
+            </form>
+              <form action="request" method="POST">
+              <input type="hidden" name="_token" value="' . $csrf . '">
+                <input type="hidden" value="' . $row->id . '" name="book_id"> 
+                
+                <input type="hidden" value="' . Auth::user()->id . '" name="user_id">
+                <button  type="submit" class="addDashboardLink text-primary" style="border:none !important;background:none">
+                  <i class="fas fa-plus-circle" class="tooltip" title="Add Book to Dashboard" style="font-size:30px;position: relative;right:0.5em"></i></button>
+              </form>
             </div>
           </div>              
             ';

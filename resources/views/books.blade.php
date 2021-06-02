@@ -38,6 +38,7 @@
       @if (Auth::check())
 
       <div class="addDashboardDiv">
+      </form>
         <form action="request" method="POST">
           @csrf
           @method("POST")
@@ -55,7 +56,7 @@
         
     </div>  
     @empty
-      <h3 class="text-light" style="position: absolute;top:8em;left:18em" >No data Found</h3>
+      <h3 class="text-dark" style="position: relative;left:18em" >No data Found</h3>
   @endforelse
   
   

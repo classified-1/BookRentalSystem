@@ -38,8 +38,8 @@
                 <td>{{$data->Category->name}}</td>
                 <td>{{$data->created_at->format('d-M-Y h A')}}</td>
                 <td>
-                  <button  class="tm-product-delete-link deletebtn" >
-                    <i class="far fa-trash-alt tm-product-delete-icon" ></i>
+                  <button  class="tm-product-delete-link deletebtn" id="{{$data->id}}" >
+           <i class="far fa-trash-alt tm-product-delete-icon"  ></i>
                   </button>
                   <a href="edit/{{$data->id}}" class="tm-product-delete-link">
                     <i class="fas fa-edit tm-product-delete-icon"></i>
@@ -84,8 +84,8 @@
       var data ={
         "_token": $('meta[name="csrf-token"]').val()
       }
-      var id={{$data->id}};
-
+      var id=$(this).attr("id")
+     
       swal({
             title: "Are you sure?",
             text: "This Book will not be recovered again",

@@ -20,6 +20,7 @@
                   </div>
                   <div class="row tm-edit-product-row">
                      <div class="col-xl-6 col-lg-6 col-md-12">
+                        
                         <form action="../update/{{$book->id}}"  enctype="multipart/form-data" class="tm-edit-product-form" method="post">
                            @csrf
                           

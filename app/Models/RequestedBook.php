@@ -9,6 +9,7 @@ class RequestedBook extends Model
 {
     use HasFactory;
     protected $guarded = [];
+
     public function Book()
     {
         return $this->belongsTo(Book::class);

@@ -15,14 +15,19 @@
   <div class="container">
   
   <div class="row">
+   
     @forelse ($BooksBorrowed as $key=>$data)
- <div class="col-sm-4" id="cardid" ><div class="card text-white card-has-bg click-col" style="background-image:url('{{Storage::url($data->Book->BookImg)}}');">
+    
+ <div class="col-sm-4" id="cardid" >
+  
+   <div class="card text-white card-has-bg click-col" style="background-image:url('{{Storage::url($data->Book->BookImg)}}');">
+  
 
-        <div class="card-img-overlay d-flex flex-column" onmousemove="displayval()" onmouseout="hideval()">
+        <div class="card-img-overlay d-flex flex-column" >
          <div class="card-body">
-            <h5 class="card-meta ">{{$data->Book->BookName}}</h5>
+          <a href="{{$data->Book->BookLink}}"> <h5 class="card-meta ">{{$data->Book->BookName}}</h5></a>
             <small class="card-meta text-light mb-5 ml-4">By: {{$data->Book->AuthorName}}</small>
-            <h4 class="card-title mt-5 "><a class="text-white" herf="#">Return it Before</a></h4>
+            <h4 class="card-title mt-5 ">Return it Before</h4>
            <small><i class="far fa-clock"></i> October 15, 2020</small>
           </div>
 
@@ -41,11 +46,17 @@
             
 
             {{-- ///////Fine//// --}}
+            @if($data->fine!=0)
         <div class="media">
           <div class="media-body bg-danger pl-4 pt-2 pb-2"> 
-          <h3 class="my-0 text-white d-block text-light"><strong>Fine: </strong>100Rs</h3>
+          <h3 class="my-0 text-white d-block text-light"><strong>Fine: </strong>
+            
+            {{$data->fine}}
+            
+          </h3>
           </div>
           </div>
+          @endif
         </div>
           </div>
       </div></div>
@@ -53,6 +64,7 @@
       <h3 class="text-dark" style="position: absolute;top:8em;left:25em" >No Book Borrowed</h3>
   @endforelse
     </div>
+
   
   </div>
 </section>
