@@ -19,7 +19,6 @@ class DashboardController extends Controller
     {
         if (Auth::user()->hasRole('Student')) {
 
-
             $BooksBorrowed =  RequestedBook::with('Book')
                 ->where('status', '1')
                 ->where('user_id', Auth::user()->id)
